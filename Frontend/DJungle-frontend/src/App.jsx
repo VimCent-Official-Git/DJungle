@@ -1,22 +1,25 @@
 import { Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 import Layout from './components/common/Layout';
-import HomePage from './pages/Home';
-import LoginPage from './pages/Auth/Login';
-import RegisterPage from './pages/Auth/Register';
-import DJDashboard from './pages/DJ/Dashboard';
-import ClientDashboard from './pages/Client/Dashboard';
+
+// Carga diferida de componentes para mejor performance
+const HomePage = lazy(() => import('./pages/Home'));
+const LoginPage = lazy(() => import('./pages/Auth/Login'));
+const RegisterPage = lazy(() => import('./pages/Auth/Register'));
 
 function App() {
   return (
-    <Layout>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/dj" element={<DJDashboard />} />
-        <Route path="/client" element={<ClientDashboard />} />
+        <Route path="/" element={<Layout />}>
+          {/* Rutas públicas */}
+          <Route index element={<HomePage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          
+          {/* Ruta 404 */}
+        </Route>
       </Routes>
-    </Layout>
+ 
   );
 }
 

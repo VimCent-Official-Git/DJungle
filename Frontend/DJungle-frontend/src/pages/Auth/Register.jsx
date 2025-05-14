@@ -3,7 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { registerUser } from '../../features/auth/authSlice';
+import { registerUser } from '../../features/auth/authThunks';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();

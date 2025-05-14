@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getClientProfile } from '../../features/client/clientSlice';
+import { getClientProfile } from '../../features/client/clientThunks';
 import ProfileSection from '../../components/client/ProfileSection';
 import EventsSection from '../../components/client/EventsSection';
 import FindDJsSection from '../../components/client/FindDJsSection';

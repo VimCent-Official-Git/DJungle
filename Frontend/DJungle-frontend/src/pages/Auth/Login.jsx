@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { loginUser } from '../../features/auth/authSlice';
-
+import { loginUser } from '../../features/auth/authThunks';
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

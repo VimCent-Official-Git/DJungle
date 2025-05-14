@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDJProfile } from '../../features/dj/djSlice';
+import { getDJProfile } from '../../features/dj/djThunks';
 import ProfileSection from '../../components/dj/ProfileSection';
 import PortfolioSection from '../../components/dj/PortfolioSection';
 import StatsSection from '../../components/dj/StatsSection';
